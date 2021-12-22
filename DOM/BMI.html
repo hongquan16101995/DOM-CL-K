@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Chiều cao</p><input type="text" id="chieuCao">
+    <p>Cân nặng</p><input type="text" id="canNang">
+    <br><br>
+    <button onclick="tinhToan()">Tính toán</button>
+    <p id="result"></p>
+</body>
+<script>
+    function tinhToan() {
+        let chieuCao = parseFloat(document.getElementById("chieuCao").value)
+        let canNang = parseFloat(document.getElementById("canNang").value)
+        let result = canNang / (chieuCao * chieuCao)
+        let ketqua = ""
+        if (result > 40) {
+            ketqua = "Béo độ 3"
+        } else if (result > 35) {
+            ketqua = "Béo độ 2"
+        } else if (result > 30) {
+            ketqua = "Béo độ 1"
+        } else {
+            ketqua = "Bình thường"
+        }
+        console.log(result);
+        document.getElementById("result").innerHTML = "<h1>Kết quả là: " + ketqua + "</h1>"
+    }
+</script>
+</html>
